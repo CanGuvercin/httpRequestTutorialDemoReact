@@ -11,6 +11,7 @@ import Error from './components/Error.jsx';
 function App() {
   const selectedPlace = useRef();
 
+  const [alert,setAlert]  = useState(false);
   const [userPlaces, setUserPlaces] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState();
@@ -34,6 +35,8 @@ function App() {
 
     fetchPlaces();
   }, []);
+
+
 
   function handleStartRemovePlace(place) {
     setModalIsOpen(true);
